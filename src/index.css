@@ -427,6 +427,8 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 14px rgba(255, 255, 255, 0.12));
+}
+
 .section-description {
   font-size: clamp(1rem, 1.8vw, 1.125rem);
   color: var(--text-secondary);
