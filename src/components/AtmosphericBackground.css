@@ -1,0 +1,176 @@
+/* Atmospheric Background Styling */
+
+.atmospheric-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+  background-color: var(--color-bg-base);
+}
+
+/* Ambient Radial Glow Orbs */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.42;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+[data-theme="light"] .ambient-orb {
+  opacity: 0.35;
+  filter: blur(105px);
+}
+
+/* Dynamic Interactive Cursor Spotlight */
+.interactive-cursor-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.16) 0%, rgba(37, 99, 235, 0.14) 38%, rgba(245, 158, 11, 0.08) 60%, transparent 75%);
+  filter: blur(55px);
+  opacity: 0.9;
+  will-change: transform;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="light"] .interactive-cursor-spotlight {
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, rgba(29, 78, 216, 0.1) 40%, rgba(217, 119, 6, 0.06) 60%, transparent 75%);
+  opacity: 0.8;
+}
+
+/* Orb 1: Sovereign Royal Blue (Top-Right / Center) */
+.orb-peach-1 {
+  width: min(65vw, 680px);
+  height: min(65vw, 680px);
+  top: -15%;
+  right: -5%;
+  background: radial-gradient(circle, #2563EB 0%, rgba(37, 99, 235, 0.4) 35%, rgba(37, 99, 235, 0) 70%);
+  animation: floatPeach1 24s ease-in-out infinite alternate;
+}
+
+/* Orb 2: Vibrant Rose Pink (Top-Left / Middle) */
+.orb-teal-1 {
+  width: min(70vw, 700px);
+  height: min(70vw, 700px);
+  top: 15%;
+  left: -15%;
+  background: radial-gradient(circle, #F43F5E 0%, rgba(244, 63, 94, 0.35) 40%, rgba(244, 63, 94, 0) 70%);
+  animation: floatTeal1 28s ease-in-out infinite alternate;
+}
+
+/* Orb 3: Regal Metallic Gold (Mid-Bottom Right) */
+.orb-peach-2 {
+  width: min(60vw, 560px);
+  height: min(60vw, 560px);
+  bottom: 10%;
+  right: -10%;
+  background: radial-gradient(circle, #F59E0B 0%, rgba(245, 158, 11, 0.32) 40%, rgba(245, 158, 11, 0) 70%);
+  animation: floatPeach2 32s ease-in-out infinite alternate;
+}
+
+/* Orb 4: Deep Midnight Sapphire Royal Blue (Bottom Left) */
+.orb-teal-2 {
+  width: min(55vw, 520px);
+  height: min(55vw, 520px);
+  bottom: -15%;
+  left: 10%;
+  background: radial-gradient(circle, #1E40AF 0%, rgba(30, 64, 175, 0.35) 45%, rgba(30, 64, 175, 0) 70%);
+  animation: floatTeal2 26s ease-in-out infinite alternate;
+}
+
+/* Orb 5: Platinum Silver & Pure White Shimmer Center */
+.orb-cream {
+  width: min(50vw, 460px);
+  height: min(50vw, 460px);
+  top: 42%;
+  left: 35%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(203, 213, 225, 0.15) 40%, transparent 68%);
+  animation: floatCream 22s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .orb-cream {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(203, 213, 225, 0.3) 40%, transparent 70%);
+}
+
+/* Atmospheric subtle grid to accentuate glass depth */
+.atmospheric-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 90%);
+  opacity: 0.8;
+}
+
+[data-theme="light"] .atmospheric-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  opacity: 0.6;
+}
+
+/* Atmospheric Vignette */
+.atmospheric-vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 120px rgba(11, 15, 23, 0.5);
+  pointer-events: none;
+}
+
+[data-theme="light"] .atmospheric-vignette {
+  box-shadow: inset 0 0 100px rgba(248, 246, 242, 0.4);
+}
+
+/* Keyframes for Gentle, Restrained Floating */
+@keyframes floatPeach1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-35px, 45px, 0) scale(1.08); }
+  100% { transform: translate3d(25px, -30px, 0) scale(0.95); }
+}
+
+@keyframes floatTeal1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(45px, -40px, 0) scale(1.1); }
+  100% { transform: translate3d(-30px, 35px, 0) scale(0.96); }
+}
+
+@keyframes floatPeach2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-40px, -30px, 0) scale(1.06); }
+  100% { transform: translate3d(30px, 25px, 0) scale(0.94); }
+}
+
+@keyframes floatTeal2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(30px, 40px, 0) scale(1.09); }
+  100% { transform: translate3d(-25px, -35px, 0) scale(0.97); }
+}
+
+@keyframes floatCream {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-25px, 20px, 0) scale(1.12); }
+  100% { transform: translate3d(20px, -20px, 0) scale(0.92); }
+}
+
+/* Reduced motion disables all floating keyframes */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb {
+    animation: none !important;
+    filter: blur(120px) !important;
+    transform: none !important;
+  }
+}
